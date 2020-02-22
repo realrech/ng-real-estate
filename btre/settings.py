@@ -143,5 +143,7 @@ MESSAGE_TAGS = {
     messages.ERROR: 'danger'
 }
 
-
-django_heroku.settings(locals())
+try:
+    from .local_settings import *
+except ImportError:
+    pass
